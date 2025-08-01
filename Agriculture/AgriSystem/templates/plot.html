@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="container my-4">
+  <h2 class="text-center mb-4">Our Plots</h2>
+  <div class="row">
+    {% for p in plots %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{{ p.Image.url }}" class="card-img-top" alt="{{ p.Name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ p.name }}</h5>
+          <p class="card-text">{{ p.description }}</p>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p class="text-center">No plots available right now.</p>
+    {% endfor %}
+  </div>
+
+  <!-- Add the map below -->
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31323.643678967732!2d76.97810681228765!3d11.079393008197437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857771c686243%3A0xf7505404f9cc2ca8!2sGreenfield%20Emerald!5e0!3m2!1sen!2sin!4v1751477757102!5m2!1sen!2sin" 
+   width="600" height="450" style="border:0;" 
+   allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+  <div class="my-5">
+    <h3 class="text-center">Our Location</h3>
+    <div class="d-flex justify-content-center">
+      
+    </div>
+  </div>
+</div>
+{% endblock %}
